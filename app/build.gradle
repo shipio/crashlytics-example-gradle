@@ -30,10 +30,28 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            ext.betaDistributionReleaseNotes="Release Notes for this build."
+            ext.betaDistributionEmails="sandman@ship.io"
         }
     }
 }
 
+android.signingConfigs {
+    debug {
+        storeFile file("keystore3")
+        storePassword "my pass"
+        keyAlias "my alias"
+        keyPassword "my alias pass"
+    }
+    release {
+        storeFile file("keystore3")
+        storePassword "my pass"
+        keyAlias "my alias"
+        keyPassword "my alias pass"
+    }
+}
+
+android.buildTypes.release.signingConfig android.signingConfigs.release
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
