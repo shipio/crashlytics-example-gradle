@@ -31,7 +31,7 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             ext.betaDistributionReleaseNotes="Release Notes for this build."
-            ext.betaDistributionEmails="stamhankar@gmail.com"
+            ext.betaDistributionEmails="team@ship.io"
         }
     }
 }
@@ -59,3 +59,5 @@ dependencies {
         transitive = true;
     }
 }
+
+task build_and_ota_release(dependsOn: ['build', 'crashlyticsUploadDistributionRelease'])
