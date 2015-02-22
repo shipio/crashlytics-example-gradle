@@ -60,4 +60,4 @@ dependencies {
     }
 }
 
-task build_and_ota_release(dependsOn: ['build', 'crashlyticsUploadDistributionRelease'])
+task buildAndOtaRelease(dependsOn: ['build', 'crashlyticsUploadDistributionRelease'])
